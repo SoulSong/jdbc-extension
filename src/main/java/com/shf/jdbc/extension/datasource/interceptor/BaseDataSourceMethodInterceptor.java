@@ -4,8 +4,6 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.util.ReflectionUtils;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.sql.DataSource;
 import java.lang.reflect.Method;
 
@@ -22,9 +20,8 @@ public abstract class BaseDataSourceMethodInterceptor implements MethodIntercept
         this.dataSource = setDataSource(dataSource);
     }
 
-    @Nullable
     @Override
-    public Object invoke(@Nonnull MethodInvocation methodInvocation) throws Throwable {
+    public Object invoke( MethodInvocation methodInvocation) throws Throwable {
         final Method proxyMethod = ReflectionUtils.findMethod(this.dataSource.getClass(),
                 methodInvocation.getMethod().getName());
         if (proxyMethod != null) {
