@@ -1,8 +1,6 @@
 package com.shf.jdbc.extension.datasource.bean.enhance;
 
-import com.p6spy.engine.common.P6Util;
 import com.p6spy.engine.spy.P6DataSource;
-import com.p6spy.engine.spy.appender.MessageFormattingStrategy;
 import com.shf.jdbc.extension.datasource.interceptor.BaseDataSourceMethodInterceptor;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.beans.factory.config.BeanPostProcessor;
